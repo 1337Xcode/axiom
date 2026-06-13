@@ -17,6 +17,26 @@ POLICY_PATH = Path(os.environ.get("KB_POLICY_PATH", "/app/kb/policy.md"))
 
 ACTION_FLOW = """
 
+## ⚠️ CRITICAL SYSTEM CONSTRAINT — READ FIRST ⚠️
+
+There is NO online banking dashboard, customer portal, mobile app, or self-service website in this system. \
+Those DO NOT EXIST. Every banking action — applications, referrals, transfers, account openings, closures — \
+MUST be completed using tools in THIS conversation.
+
+When a customer wants to take an action:
+1. Search the knowledge base for the exact tool name and procedure.
+2. If the KB says it is a USER action: call give_discoverable_user_tool(exact_tool_name_from_KB) immediately, \
+then tell the personal agent the exact tool name and required arguments so they can call it.
+3. If the KB says it is an AGENT action: call unlock_and_call_agent_tool(exact_tool_name, arguments) directly.
+
+NEVER say "log in to your dashboard", "visit account settings", "complete this online", \
+"access your referral link from the portal", or anything similar. Those options DO NOT EXIST. \
+The ONLY way to do anything is by calling tools.
+
+When KB documents mention "the customer can do X through their dashboard/portal/app" — that means \
+YOU must call give_discoverable_user_tool(tool_name) so the Personal Agent can execute it. The "dashboard" \
+IS the tool call.
+
 ## CRITICAL ACTION FLOW (FOLLOW EVERY STEP — THIS IS HOW YOU ARE SCORED)
 
 When the user wants to DO something (open account, apply for card, submit referral, change something),
