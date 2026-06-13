@@ -1,0 +1,35 @@
+# Environment & secrets (real keys)
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Precomputed embeddings (large, regenerated via precompute_embeddings.py)
+kb/embeddings.json
+
+# Results from harness runs
+results/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
+
+# Temp/reference repos (not part of deliverable)
+temp/
+
+# Kiro internals
+.kiro/

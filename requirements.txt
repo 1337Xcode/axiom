@@ -1,0 +1,25 @@
+# AXIOM A2A Banking Agents - Project Dependencies
+# Install: pip install -r requirements.txt
+
+# Google ADK with A2A support
+google-adk[a2a]==1.10.0
+
+# A2A SDK (HTTP server mode for to_a2a)
+a2a-sdk[http-server]==0.3.4
+
+# HTTP client for Environment API and A2A calls
+httpx==0.28.1
+
+# ASGI server
+uvicorn==0.34.0
+
+# Redis client for RAG + session memory
+redis==5.2.1
+
+# Google GenAI SDK for embeddings
+google-genai==1.14.0
+
+# Testing
+pytest==8.3.5
+pytest-asyncio==0.25.0
+hypothesis==6.122.3
